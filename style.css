@@ -269,48 +269,70 @@ footer {
 
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
+  /* Perbaikan Navbar */
   header {
     flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 15px; /* Mengembalikan padding agar tidak terlalu kecil */
   }
+
+  .logo {
+    font-size: 1.8em; /* Ukuran logo lebih besar */
+  }
+
   header nav {
     margin-top: 10px;
   }
+
   header nav a {
-    margin: 0 8px;
+    margin: 0 12px; /* Jarak antar tautan lebih lebar */
+    font-size: 1.1em; /* Ukuran font navbar lebih besar */
   }
+
+  /* Perbaikan Tombol-tombol */
   .hero h2 {
     font-size: 2em;
   }
+
   .hero p {
     font-size: 1rem;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .cta-button {
+    padding: 14px 28px; /* Padding tombol lebih besar */
+    font-size: 1.2em; /* Ukuran font tombol lebih besar */
+  }
+
   .portfolio {
     padding: 50px 10px;
   }
+
   .gallery {
     flex-direction: column; /* Galeri foto menjadi 1 kolom */
     align-items: center;
     gap: 20px;
   }
+
   .item {
     width: 95%; /* Lebar foto undangan 95% dari layar */
     max-width: none;
     height: 350px;
   }
+
   /* Menonaktifkan efek hover di mobile */
   .item:hover {
     transform: none;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
+
   .video-grid {
     grid-template-columns: 1fr; /* Mengubah video galeri menjadi 1 kolom */
     gap: 20px;
   }
+
   .video-item {
     width: 90%;
     max-width: none;
@@ -318,8 +340,26 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .play-button {
+    width: 50px; /* Ukuran tombol play lebih proporsional */
+    height: 50px;
+    font-size: 1.8em;
+  }
+
   .contact-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Jarak antar tombol kontak lebih lebar */
+  }
+
+  .contact-link {
+    font-size: 1.1em; /* Ukuran font tombol kontak lebih besar */
+    padding: 12px 24px; /* Padding tombol kontak lebih besar */
+  }
+
+  /* Perbaikan Footer */
+  footer {
+    padding: 20px 10px; /* Menambah padding agar footer tidak terlalu pendek */
+    font-size: 1em; /* Ukuran font footer lebih besar */
   }
 }
