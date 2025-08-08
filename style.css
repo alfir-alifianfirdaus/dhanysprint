@@ -119,9 +119,10 @@ header nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item img {
@@ -147,31 +148,30 @@ header nav a:hover {
 
 .video-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   margin: 30px auto;
+  padding: 0 20px;
 }
 
 .video-item {
   position: relative;
-  width: 100%;
-  max-width: 500px;
+  width: 250px;
+  height: 350px;
   display: block;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.video-item:hover {
-  transform: scale(1.05);
 }
 
 .video-item video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .play-button {
@@ -196,6 +196,49 @@ header nav a:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+/* Gaya untuk section Kontak */
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2em;
+  background: linear-gradient(to right, #e2b45a, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.contact p {
+  font-size: 1.1em;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--krem);
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: var(--golden-brown);
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: #d1b48c;
+}
+
 /* Gaya untuk animasi saat di-scroll */
 .scroll-anim {
   opacity: 0;
@@ -217,10 +260,11 @@ header nav a:hover {
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: var(--golden-brown);
   color: var(--putih);
   margin-top: 50px;
+  font-size: 0.9em;
 }
 
 /* Media Query untuk Mobile */
@@ -228,7 +272,7 @@ footer {
   header {
     flex-direction: column;
     text-align: center;
-    padding: 15px 10px;
+    padding: 10px;
   }
   header nav {
     margin-top: 10px;
@@ -240,22 +284,42 @@ footer {
     font-size: 2em;
   }
   .hero p {
-    font-size: 1em;
+    font-size: 1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .portfolio {
     padding: 50px 10px;
   }
   .gallery {
-    flex-direction: column;
+    flex-direction: column; /* Galeri foto menjadi 1 kolom */
     align-items: center;
     gap: 20px;
   }
   .item {
-    width: 90%;
-    max-width: 300px;
-    height: 200px;
+    width: 95%; /* Lebar foto undangan 95% dari layar */
+    max-width: none;
+    height: 350px;
+  }
+  /* Menonaktifkan efek hover di mobile */
+  .item:hover {
+    transform: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
   .video-grid {
-    padding: 0 10px;
+    grid-template-columns: 1fr; /* Mengubah video galeri menjadi 1 kolom */
+    gap: 20px;
+  }
+  .video-item {
+    width: 90%;
+    max-width: none;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-links {
+    flex-direction: column;
+    gap: 10px;
   }
 }
